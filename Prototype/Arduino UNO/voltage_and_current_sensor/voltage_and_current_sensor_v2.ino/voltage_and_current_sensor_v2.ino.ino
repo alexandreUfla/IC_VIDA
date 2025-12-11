@@ -58,6 +58,9 @@ void loop() {
   // Corrente real
   float corrente = VshuntReal / shuntSensitivity;
 
+  //Potência entregue
+  float potencia = Vbateria*corrente;
+
   // Saída serial
   Serial.print("Tensao da Bateria: ");
   Serial.print(Vbateria, 2);
@@ -66,6 +69,10 @@ void loop() {
   Serial.print("Corrente: ");
   Serial.print(corrente, 2);
   Serial.println(" A");
+
+  Serial.print("Potencia: ");
+  Serial.print(potencia, 2);
+  Serial.println(" W");
 
   Serial.println("-----------------------------");
   delay(200);
